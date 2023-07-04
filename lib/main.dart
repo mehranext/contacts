@@ -1,4 +1,5 @@
 import 'package:contacts/screens/home_screen.dart';
+import 'package:contacts/utils/network.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Network.getData();
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'دفترچه تلفن آنلاین',
