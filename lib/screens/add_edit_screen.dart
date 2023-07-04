@@ -38,7 +38,7 @@ class _AppEditScreenState extends State<AppEditScreen> {
                 hintText: 'Name',
                 inputType: TextInputType.name,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MyTextField(
@@ -47,11 +47,11 @@ class _AppEditScreenState extends State<AppEditScreen> {
                 hintText: 'phone',
                 inputType: TextInputType.number,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MyButton(
-                  child: Text('Add'),
+                  child: const Text('Add'),
                   width: 350,
                   onPressed: () {
                     if (FormKey.currentState!.validate()) {}
