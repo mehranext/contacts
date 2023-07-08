@@ -8,7 +8,7 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final bool isEnabled;
   //
-  MyTextField({
+  const MyTextField({
     this.inputType = TextInputType.text,
     this.isEnabled = true,
     required this.controller,
@@ -36,9 +36,9 @@ class MyTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0),
-          borderSide: BorderSide(color: Colors.redAccent),
+          borderSide: const BorderSide(color: Colors.redAccent),
         ),
-        contentPadding: EdgeInsets.all(10.0),
+        contentPadding: const EdgeInsets.all(10.0),
       ),
     );
   }

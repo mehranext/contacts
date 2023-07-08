@@ -5,7 +5,7 @@ class MyButton extends StatelessWidget {
   final Color color;
   final double width;
   final Widget child;
-  MyButton({
+  const MyButton({super.key, 
     required this.child,
     required this.width,
     required this.onPressed,
@@ -17,13 +17,13 @@ class MyButton extends StatelessWidget {
     return AnimatedContainer(
       width: width,
       height: 50.0,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
         child: ElevatedButton(
           style: TextButton.styleFrom(elevation: 0.0, backgroundColor: color),
-          child: child,
           onPressed: onPressed,
+          child: child,
         ),
       ),
     );

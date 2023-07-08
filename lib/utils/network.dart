@@ -1,5 +1,4 @@
 import 'package:contacts/models/contact.dart';
-import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
@@ -34,7 +33,6 @@ class Network {
     contacts contact = contacts(phone: phone, fullname: fullname);
 
     http.post(Network.url, body: contact.toJson()).then((response) {
-      print(response.body);
     });
   }
   //* put data
@@ -47,7 +45,6 @@ class Network {
     contacts contact = contacts(phone: phone, fullname: fullname);
 
     http.put(urlWithId(id), body: contact.toJson()).then((response) {
-      print(response.body);
     });
   }
 //*delet contact

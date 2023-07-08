@@ -1,3 +1,4 @@
+import 'package:contacts/utils/network.dart';
 import 'package:contacts/widgets/MyButton.dart';
 import 'package:contacts/widgets/MyTextField.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class AppEditScreen extends StatefulWidget {
 }
 
 class _AppEditScreenState extends State<AppEditScreen> {
+  // ignore: non_constant_identifier_names
   final FormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -51,11 +53,15 @@ class _AppEditScreenState extends State<AppEditScreen> {
                 height: 20,
               ),
               MyButton(
-                  child: const Text('Add'),
                   width: 350,
                   onPressed: () {
-                    if (FormKey.currentState!.validate()) {}
-                  })
+                    if (FormKey.currentState!.validate()) {
+                      Network.postData(
+                          phone: AppEditScreen.phoneController.text,
+                          fullname: AppEditScreen.nameController.text);
+                    }
+                  },
+                  child: const Text('Add'))
             ],
           ),
         ),
